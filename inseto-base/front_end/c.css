@@ -177,3 +177,187 @@ body {
     font-size: 0.9rem;
     color: #8b949e;
 }
+
+/* ========================================
+   TEMA CLARO
+   ======================================== */
+
+[data-theme="light"] body {
+    background-color: #f6f8fa;
+    color: #24292f;
+}
+
+[data-theme="light"] .wiki-header,
+[data-theme="light"] .artigo-bloco,
+[data-theme="light"] .sidebar-box {
+    background-color: #ffffff;
+    border-color: #d0d7de;
+}
+
+
+/* ========================================
+   CABEÇALHO
+   ======================================== */
+
+[data-theme="light"] .logo-area h1 {
+    color: #0969da;
+}
+
+[data-theme="light"] .logo-area p {
+    color: #57606a;
+}
+
+
+/* ========================================
+   MENU
+   ======================================== */
+
+[data-theme="light"] .topo-nav a {
+    color: #24292f;
+}
+
+[data-theme="light"] .topo-nav a:hover,
+[data-theme="light"] .topo-nav a.ativo {
+    color: #0969da;
+}
+
+
+/* ========================================
+   TÍTULOS
+   ======================================== */
+
+[data-theme="light"] .artigo-bloco h2 {
+    color: #0969da;
+    border-color: #eaeef2;
+}
+
+[data-theme="light"] .artigo-bloco p {
+    color: #424a53;
+}
+
+
+/* ========================================
+   CARDS
+   ======================================== */
+
+[data-theme="light"] .card-categoria {
+    background-color: #f6f8fa;
+    border-color: #d0d7de;
+}
+
+[data-theme="light"] .card-categoria:hover {
+    border-color: #0969da;
+}
+
+[data-theme="light"] .card-categoria h3 {
+    color: #1f2328;
+}
+
+[data-theme="light"] .card-categoria p {
+    color: #57606a;
+}
+
+[data-theme="light"] .card-categoria a {
+    color: #0969da;
+}
+
+
+/* ========================================
+   SIDEBAR
+   ======================================== */
+
+[data-theme="light"] .sidebar-box h3 {
+    color: #1f2328;
+    border-color: #eaeef2;
+}
+
+[data-theme="light"] .sidebar-box p {
+    color: #57606a;
+}
+
+[data-theme="light"] .sidebar-box ul li a {
+    color: #0969da;
+}
+
+
+/* ========================================
+   BOTÃO DO TEMA
+   ======================================== */
+
+#alternar-tema {
+    background-color: #161b22;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+
+    border-radius: 6px;
+
+    padding: 8px 12px;
+
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s,
+        color 0.2s,
+        border-color 0.2s,
+        transform 0.2s;
+}
+
+#alternar-tema:hover {
+    border-color: #58a6ff;
+    color: #58a6ff;
+
+    transform: translateY(-1px);
+}
+
+
+/* Botão no tema claro */
+
+[data-theme="light"] #alternar-tema {
+    background-color: #ffffff;
+    color: #24292f;
+    border-color: #d0d7de;
+}
+
+[data-theme="light"] #alternar-tema:hover {
+    border-color: #0969da;
+    color: #0969da;
+}
+
+
+/* ========================================
+   ELEMENTOS COM STYLE INLINE
+   ======================================== */
+
+/* Fundo escuro usado diretamente no HTML */
+[data-theme="light"] [style*="#161b22"] {
+    background-color: #ffffff !important;
+}
+
+/* Fundo de cards */
+[data-theme="light"] [style*="#21262d"] {
+    background-color: #f6f8fa !important;
+}
+
+/* Bordas */
+[data-theme="light"] [style*="#30363d"] {
+    border-color: #d0d7de !important;
+}
+
+/* Textos */
+[data-theme="light"] [style*="#c9d1d9"] {
+    color: #24292f !important;
+}
+
+[data-theme="light"] [style*="#8b949e"] {
+    color: #57606a !important;
+}
+
+/* Azul */
+[data-theme="light"] [style*="#58a6ff"] {
+    color: #0969da !important;
+    border-color: #0969da !important;
+}
