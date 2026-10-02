@@ -149,5 +149,118 @@ function mostrarPesquisa(resultados, texto) {
 window.pesquisarInsetos = pesquisarInsetos;
 
 
-// tema-escuro 
-// logica animação logo
+// ========================================
+// TEMA CLARO / ESCURO
+// ========================================
+
+function aplicarTema(tema) {
+
+    document.documentElement.setAttribute("data-theme", tema);
+
+    // Salva o tema escolhido pelo usuário
+    localStorage.setItem("tema", tema);
+
+    const botaoTema = document.getElementById("alternar-tema");
+
+    if (botaoTema) {
+
+        if (tema === "dark") {
+
+            botaoTema.textContent = "☀️ Modo claro";
+            botaoTema.setAttribute(
+                "aria-label",
+                "Ativar modo claro"
+            );
+
+        } else {
+
+            botaoTema.textContent = "🌙 Modo escuro";
+            botaoTema.setAttribute(
+                "aria-label",
+                "Ativar modo escuro"
+            );
+        }
+    }
+}
+
+
+// ========================================
+// CONFIGURAR TEMA
+// ========================================
+
+function configurarTema() {
+
+    // Tenta recuperar o tema salvo
+    let temaSalvo = localStorage.getItem("tema");
+
+    // Se não existir, começa no modo escuro
+    if (temaSalvo !== "light" && temaSalvo !== "dark") {
+        temaSalvo = "dark";
+    }
+
+
+    // ========================================
+    // CRIAR BOTÃO
+    // ========================================
+
+    let botaoTema = document.getElementById("alternar-tema");
+
+    if (!botaoTema) {
+
+        botaoTema = document.createElement("button");
+
+        botaoTema.id = "alternar-tema";
+
+        botaoTema.type = "button";
+
+        const navegacao = document.querySelector(".topo-nav");
+
+        if (navegacao) {
+
+            navegacao.appendChild(botaoTema);
+
+        } else {
+
+            document.body.appendChild(botaoTema);
+        }
+    }
+
+
+    // Aplica o tema salvo
+    aplicarTema(temaSalvo);
+
+
+    // ========================================
+    // CLIQUE DO BOTÃO
+    // ========================================
+
+    botaoTema.addEventListener("click", function () {
+
+        const temaAtual =
+            document.documentElement.getAttribute("data-theme");
+
+        let novoTema;
+
+        if (temaAtual === "dark") {
+
+            novoTema = "light";
+
+        } else {
+
+            novoTema = "dark";
+        }
+
+        aplicarTema(novoTema);
+    });
+}
+
+
+// ========================================
+// INICIAR TEMA
+// ========================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    configurarTema();
+
+});
