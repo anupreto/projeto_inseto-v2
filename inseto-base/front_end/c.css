@@ -12,7 +12,6 @@ body {
     padding: 20px;
 }
 
-/* Cabeçalho estilo portal */
 .wiki-header {
     background-color: #161b22;
     border: 1px solid #30363d;
@@ -51,7 +50,6 @@ body {
     color: #58a6ff;
 }
 
-/* Container Principal com Grid (Conteúdo + Sidebar) */
 .wiki-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -66,7 +64,6 @@ body {
     }
 }
 
-/* Blocos de Conteúdo */
 .wiki-content {
     display: flex;
     flex-direction: column;
@@ -93,7 +90,6 @@ body {
     color: #b1bac4;
 }
 
-/* Grid interna de Categorias */
 .grid-categorias {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -133,7 +129,6 @@ body {
     font-weight: 600;
 }
 
-/* Sidebar Estilo Wiki */
 .wiki-sidebar {
     display: flex;
     flex-direction: column;
@@ -178,10 +173,6 @@ body {
     color: #8b949e;
 }
 
-/* ========================================
-   TEMA CLARO
-   ======================================== */
-
 [data-theme="light"] body {
     background-color: #f6f8fa;
     color: #24292f;
@@ -194,11 +185,6 @@ body {
     border-color: #d0d7de;
 }
 
-
-/* ========================================
-   CABEÇALHO
-   ======================================== */
-
 [data-theme="light"] .logo-area h1 {
     color: #0969da;
 }
@@ -206,11 +192,6 @@ body {
 [data-theme="light"] .logo-area p {
     color: #57606a;
 }
-
-
-/* ========================================
-   MENU
-   ======================================== */
 
 [data-theme="light"] .topo-nav a {
     color: #24292f;
@@ -221,11 +202,6 @@ body {
     color: #0969da;
 }
 
-
-/* ========================================
-   TÍTULOS
-   ======================================== */
-
 [data-theme="light"] .artigo-bloco h2 {
     color: #0969da;
     border-color: #eaeef2;
@@ -234,11 +210,6 @@ body {
 [data-theme="light"] .artigo-bloco p {
     color: #424a53;
 }
-
-
-/* ========================================
-   CARDS
-   ======================================== */
 
 [data-theme="light"] .card-categoria {
     background-color: #f6f8fa;
@@ -261,11 +232,6 @@ body {
     color: #0969da;
 }
 
-
-/* ========================================
-   SIDEBAR
-   ======================================== */
-
 [data-theme="light"] .sidebar-box h3 {
     color: #1f2328;
     border-color: #eaeef2;
@@ -279,26 +245,16 @@ body {
     color: #0969da;
 }
 
-
-/* ========================================
-   BOTÃO DO TEMA
-   ======================================== */
-
 #alternar-tema {
     background-color: #161b22;
     color: #c9d1d9;
     border: 1px solid #30363d;
-
     border-radius: 6px;
-
     padding: 8px 12px;
-
     font-family: inherit;
     font-size: 0.9rem;
     font-weight: 600;
-
     cursor: pointer;
-
     transition:
         background-color 0.2s,
         color 0.2s,
@@ -309,12 +265,8 @@ body {
 #alternar-tema:hover {
     border-color: #58a6ff;
     color: #58a6ff;
-
     transform: translateY(-1px);
 }
-
-
-/* Botão no tema claro */
 
 [data-theme="light"] #alternar-tema {
     background-color: #ffffff;
@@ -327,27 +279,18 @@ body {
     color: #0969da;
 }
 
-
-/* ========================================
-   ELEMENTOS COM STYLE INLINE
-   ======================================== */
-
-/* Fundo escuro usado diretamente no HTML */
 [data-theme="light"] [style*="#161b22"] {
     background-color: #ffffff !important;
 }
 
-/* Fundo de cards */
 [data-theme="light"] [style*="#21262d"] {
     background-color: #f6f8fa !important;
 }
 
-/* Bordas */
 [data-theme="light"] [style*="#30363d"] {
     border-color: #d0d7de !important;
 }
 
-/* Textos */
 [data-theme="light"] [style*="#c9d1d9"] {
     color: #24292f !important;
 }
@@ -356,7 +299,6 @@ body {
     color: #57606a !important;
 }
 
-/* Azul */
 [data-theme="light"] [style*="#58a6ff"] {
     color: #0969da !important;
     border-color: #0969da !important;
