@@ -1,10 +1,3 @@
-// ========================================
-// PROJETO INSETOS
-// JavaScript - Front-end
-// ========================================
-
-
-// Quando a página carregar
 document.addEventListener("DOMContentLoaded", function () {
 
     carregarInsetos();
@@ -14,21 +7,13 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// ========================================
-// VARIÁVEIS
-// ========================================
-
 let insetos = [];
 
 
-// Elementos do HTML
 const conteudo = document.querySelector(".wiki-content");
 const sidebar = document.querySelector(".wiki-sidebar");
 const menu = document.querySelector(".topo-nav");
 
-// ========================================
-// PESQUISA
-// ========================================
 
 function pesquisarInsetos(texto) {
 
@@ -60,10 +45,6 @@ function pesquisarInsetos(texto) {
 
 }
 
-
-// ========================================
-// MOSTRAR PESQUISA
-// ========================================
 
 function mostrarPesquisa(resultados, texto) {
 
@@ -142,22 +123,13 @@ function mostrarPesquisa(resultados, texto) {
 }
 
 
-// ========================================
-// DISPONIBILIZAR PESQUISA
-// ========================================
-
 window.pesquisarInsetos = pesquisarInsetos;
 
-
-// ========================================
-// TEMA CLARO / ESCURO
-// ========================================
 
 function aplicarTema(tema) {
 
     document.documentElement.setAttribute("data-theme", tema);
 
-    // Salva o tema escolhido pelo usuário
     localStorage.setItem("tema", tema);
 
     const botaoTema = document.getElementById("alternar-tema");
@@ -184,24 +156,14 @@ function aplicarTema(tema) {
 }
 
 
-// ========================================
-// CONFIGURAR TEMA
-// ========================================
-
 function configurarTema() {
 
-    // Tenta recuperar o tema salvo
     let temaSalvo = localStorage.getItem("tema");
 
-    // Se não existir, começa no modo escuro
     if (temaSalvo !== "light" && temaSalvo !== "dark") {
         temaSalvo = "dark";
     }
 
-
-    // ========================================
-    // CRIAR BOTÃO
-    // ========================================
 
     let botaoTema = document.getElementById("alternar-tema");
 
@@ -226,13 +188,8 @@ function configurarTema() {
     }
 
 
-    // Aplica o tema salvo
     aplicarTema(temaSalvo);
 
-
-    // ========================================
-    // CLIQUE DO BOTÃO
-    // ========================================
 
     botaoTema.addEventListener("click", function () {
 
@@ -254,10 +211,6 @@ function configurarTema() {
     });
 }
 
-
-// ========================================
-// INICIAR TEMA
-// ========================================
 
 document.addEventListener("DOMContentLoaded", function () {
 
