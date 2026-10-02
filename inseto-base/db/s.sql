@@ -385,8 +385,27 @@ INSERT INTO insetos(nome_insetos, nc_insetos, ordem_insetos, familia_insetos, di
 ('Estrela-do-mar de areia fina', 'Astropecten aranciacus', 'Equinodermo', 'Astropectinidae', 'Carnívoro', 'Estrela de areia com margens pectinadas, caçadora noturna de moluscos e vermes.'),
 ('Ofiúro de braços longos', 'Amphipholis squamata', 'Equinodermo', 'Amphiuridae', 'Detritívoro', 'Pequeno ofiúro cosmopolita que incuba seus ovos internamente até a eclosão.'),
 ('Lírio-do-mar gigante de fenda', 'Lamprometra palmata', 'Equinodermo', 'Mariametridae', 'Suspensívoro', 'Crinoide tropical com múltiplos braços flexíveis que formam leques filtradores.');
-    UPDATE insetos SET foto_insetoss = 'https://cdn.questlog.gg/crimson desert/assets/_sprites/itemicon_prefab_cd_m__rhinocerosbeetle__.webp' WHERE id_insetos;
+   
+    UPDATE insetos SET foto_insetos CASE id_insetos
+    WHEN 1 THEN foto_insetos = 'url',
+    WHEN 2 THEN foto_insetos = 'url',
+    WHEN 3 THEN foto_insetos = 'url',
+    WHEN 4 THEN foto_insetos = 'url',
+    WHEN 5 THEN foto_insetos = 'url',
+    WHEN 6 THEN foto_insetos = 'url',
+    WHEN 7 THEN foto_insetos = 'url',
+    WHEN 8 THEN foto_insetos = 'url',
+    WHEN 9 THEN foto_insetos = 'url',
+    WHEN 10 THEN foto_insetos = 'url',
+    -- 11 á 366 depois
+    ELSE foto_insetos
+    END
+    WHERE id_insetos = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10); -- adicione 11 á 366 
+    
+
+
     UPDATE insetos SET destaque = 1 WHERE id_insetos IN(1, 62, 123, 184, 245, 306);
+        SELECT * FROM insetos;
 
 CREATE TABLE habitats (
     id_habitats INT AUTO_INCREMENT PRIMARY KEY,
@@ -403,3 +422,4 @@ INSERT INTO (nome_habitats, )
 DROP TABLE insetos;
 TRUNCATE Table insetos;
 SELECT * FROM insetos;
+DROP TABLE insetos;
