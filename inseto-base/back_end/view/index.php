@@ -113,3 +113,5 @@ $curiosidadeDiaria = $stmtCuriosidade->fetch(PDO::FETCH_ASSOC);
     <script src="../../front_end/j.js"></script>
 </body>
 </html>
+
+<!-- url do site: http://localhost/inseto-base/back_end/view/index.php -->
