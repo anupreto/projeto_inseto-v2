@@ -18,16 +18,48 @@ try {
     $pdo = new PDO("mysql:host=$host;dbname=$name_db;charset=utf8", $user, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $stmt = $pdo->prepare("SELECT * FROM insetos");
-    $stmt->execute();
-    $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $limite = 20;
+    $pagina = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1;
+    $inicio = ($pagina - 1) * $limite;
+    $busca = isset($_GET['search']) ? trim($_GET['search']) : '';
+    
+    $whereClause = "";
+    $params = [];
 
-    echo json_encode($resultados);
+    if (!empty($busca)) {
+        $whereClause = "WHERE nome_insetos LIKE :busca OR nc_insetos LIKE :busca";
+        $params[':busca'] = "%$busca%";
+    }
+
+    $sqlTotal = "SELECT COUNT(*) as total FROM insetos $whereClause";
+    $stmtTotal = $pdo->prepare($sqlTotal);
+    foreach ($params as $key => $val) {
+        $stmtTotal->bindValue($key, $val, PDO::PARAM_STR);
+    }
+    $stmtTotal->execute();
+    $totalRegistros = $stmtTotal->fetch(PDO::FETCH_ASSOC)['total'];
+    $totalPaginas = max(1, ceil($totalRegistros / $limite));
+
+    $sqlDados = "SELECT * FROM insetos $whereClause LIMIT :inicio, :limite";
+    $stmtDados = $pdo->prepare($sqlDados);
+    
+    foreach ($params as $key => $val) {
+        $stmtDados->bindValue($key, $val, PDO::PARAM_STR);
+    }
+    $stmtDados->bindValue(':inicio', $inicio, PDO::PARAM_INT);
+    $stmtDados->bindValue(':limite', $limite, PDO::PARAM_INT);
+    
+    $stmtDados->execute();
+    $resultados = $stmtDados->fetchAll(PDO::FETCH_ASSOC);
+    
+    echo json_encode([
+        "dados" => $resultados,
+        "totalPaginas" => $totalPaginas,
+        "totalRegistros" => intval($totalRegistros)
+    ]);
 
 } catch(PDOException $e) {
     http_response_code(500);
     echo json_encode(["erro" => "Erro de conexão: " . $e->getMessage()]);
 }
 ?>
-
-<!-- o endereço é http://localhost/inseto-base/back_end/config/banco.php -->
