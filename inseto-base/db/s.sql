@@ -442,7 +442,7 @@ INSERT INTO insetos(nome_insetos, nc_insetos, ordem_insetos, familia_insetos, di
     -- 11 á 366 depois
     ELSE foto_insetos
     END
-    WHERE id_insetos = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10); -- adicione 11 á 366 
+    WHERE id_insetos BETWEEN 1 AND 366; -- adicione 11 á 366 
     
 
 
