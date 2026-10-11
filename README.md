@@ -14,7 +14,7 @@ Repositório destinado ao desenvolvimento e organização dos arquivos do backen
 
 ## 📁 Estrutura
 
-* **`main/`**: Contém os arquivos de conexão com o banco de dados e as rotas da API.
+* **`main`**: Contém os arquivos de conexão com o banco de dados e as rotas da API.
 
 ---
 
