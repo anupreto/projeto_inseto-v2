@@ -1,25 +1,26 @@
-# 🐜 Insetos Base
+# 🐜 Wiki Invertebrados (Backend)
 
-Repositório destinado ao desenvolvimento e organização dos arquivos do backend da aplicação.
+Repositório oficial para o desenvolvimento, organização e gestão da base de dados e do backend da aplicação **Wiki Invertebrados**.
 
 ---
 
 ## 🛠️ Tecnologias
 
-* **PHP**
-* **MySQL**
-* **Apache (XAMPP)**
+- **PHP** (Lógica do Backend e manipulação de rotas)
+- **MySQL** (Gestão da base de dados relacional com 366 registros validados)
+- **Apache / XAMPP** (Ambiente de servidor local e hospedagem estática de assets)
 
 ---
 
-## 📁 Estrutura
+## 📁 Estrutura do Projeto
 
-* **`main`**: Contém os arquivos de conexão com o banco de dados e as rotas da API.
+- **`main`**: Contém a branch principal estável com todos os scripts de conexão, rotas da API e a estrutura de diretórios limpa de imagens locais.
 
 ---
 
-## 🚀 Como Rodar
+## 🚀 Como Rodar o Projeto Localmente
 
-1. Baixe ou clone o projeto na pasta `htdocs` do seu servidor local (XAMPP).
-2. Certifique-se de que o **Apache** e o **MySQL** estejam ativos.
-3. Acesse a pasta pelo navegador através do `localhost`.
+1. Clone ou descompacte este repositório diretamente dentro da pasta `htdocs` do seu servidor local (**XAMPP**).
+2. Abra o painel do XAMPP e certifique-se de que os módulos **Apache** e **MySQL** estão ativos (`Start`).
+3. Importe o esquema da base de dados correspondente no seu phpMyAdmin para garantir que as **366 entradas de insetos** e os caminhos das imagens estejam sincronizados.
+4. Acesse o sistema pelo navegador através de `http://localhost/` apontando para a pasta do projeto.
