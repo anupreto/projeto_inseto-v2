@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #0d1117;
+    background-color: #023f06;
     color: #c9d1d9;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
@@ -14,8 +14,8 @@ body {
 
 /* Cabeçalho estilo portal */
 .wiki-header {
-    background-color: #161b22;
-    border: 1px solid #30363d;
+    background-color: #041f08; 
+    border: 1px solid #00ff00;
     padding: 20px 30px;
     border-radius: 8px;
     display: flex;
@@ -26,12 +26,12 @@ body {
 }
 
 .logo-area h1 {
-    color: #58a6ff;
+    color: #00ff00;
     font-size: 1.8rem;
 }
 
 .logo-area p {
-    color: #8b949e;
+    color: #00ff00bd;
     font-size: 0.9rem;
 }
 
@@ -41,14 +41,14 @@ body {
 }
 
 .topo-nav a {
-    color: #c9d1d9;
+    color: #00ff0037;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s;
 }
 
 .topo-nav a:hover, .topo-nav a.ativo {
-    color: #58a6ff;
+    color: #00ff00;
 }
 
 /* Container Principal com Grid (Conteúdo + Sidebar) */
@@ -74,14 +74,14 @@ body {
 }
 
 .artigo-bloco {
-    background-color: #161b22;
-    border: 1px solid #30363d;
+    background-color: #041f08;
+    border: 1px solid #00ff00;
     padding: 30px;
     border-radius: 8px;
 }
 
 .artigo-bloco h2 {
-    color: #58a6ff;
+    color: #00ff00;
     font-size: 1.5rem;
     margin-bottom: 15px;
     border-bottom: 1px solid #21262d;
@@ -90,7 +90,7 @@ body {
 
 .artigo-bloco p {
     margin-bottom: 15px;
-    color: #b1bac4;
+    color: #00ff0088;
 }
 
 /* Grid interna de Categorias */
@@ -102,8 +102,8 @@ body {
 }
 
 .card-categoria {
-    background-color: #21262d;
-    border: 1px solid #30363d;
+    background-color: #041f08;
+    border: 1px solid #00ff00;
     padding: 20px;
     border-radius: 6px;
     transition: transform 0.2s, border-color 0.2s;
@@ -111,23 +111,23 @@ body {
 
 .card-categoria:hover {
     transform: translateY(-3px);
-    border-color: #58a6ff;
+    border-color: #00ff003a;
 }
 
 .card-categoria h3 {
-    color: #ffffff;
+    color: #00ff00;
     font-size: 1.1rem;
     margin-bottom: 8px;
 }
 
 .card-categoria p {
     font-size: 0.9rem;
-    color: #8b949e;
+    color: #00ff0042;
     margin-bottom: 15px;
 }
 
 .card-categoria a {
-    color: #58a6ff;
+    color: #00ff00;
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 600;
@@ -141,17 +141,17 @@ body {
 }
 
 .sidebar-box {
-    background-color: #161b22;
-    border: 1px solid #30363d;
+    background-color: #041f08;
+    border: 1px solid #00ff00;
     padding: 20px;
     border-radius: 8px;
 }
 
 .sidebar-box h3 {
-    color: #ffffff;
+    color: #00ff007a;
     font-size: 1rem;
     margin-bottom: 12px;
-    border-bottom: 1px solid #21262d;
+    border-bottom: 1px solid #00ff00;
     padding-bottom: 8px;
 }
 
@@ -164,7 +164,7 @@ body {
 }
 
 .sidebar-box ul li a {
-    color: #58a6ff;
+    color: #00ff00;
     text-decoration: none;
     font-size: 0.9rem;
 }
@@ -175,5 +175,5 @@ body {
 
 .sidebar-box p {
     font-size: 0.9rem;
-    color: #8b949e;
+    color: #00ff00;
 }
