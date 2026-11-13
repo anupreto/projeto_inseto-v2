@@ -774,6 +774,12 @@ WHERE id_insetos BETWEEN 1 AND 366;
         REFERENCES insetos(id_insetos)
     );
 
-    INSERT INTO (nome_habitats)
+ INSERT INTO habitats(nome_habitats, clima_habitats, bioma_habitats, descricao_habitats, id_insetos) VALUES
+ ('', '', '', '', 1),
+ ('', '', '', '', 2),
+ ('', '', '', '', 3),
+ ('', '', '', '', 4),
+ ('', '', '', '', 5);
+
     TRUNCATE Table insetos;
     SELECT * FROM insetos 
