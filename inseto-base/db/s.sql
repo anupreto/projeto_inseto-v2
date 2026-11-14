@@ -775,11 +775,106 @@ WHERE id_insetos BETWEEN 1 AND 366;
     );
 
  INSERT INTO habitats(nome_habitats, clima_habitats, bioma_habitats, descricao_habitats, id_insetos) VALUES
- ('', '', '', '', 1),
- ('', '', '', '', 2),
- ('', '', '', '', 3),
- ('', '', '', '', 4),
- ('', '', '', '', 5);
+('Florestas tropicais úmidas', 'Tropical úmido', 'Floresta tropical', 'Habita florestas com árvores de grande porte, solo rico em matéria orgânica e madeira em decomposição.', 1),
+('Florestas tropicais montanhosas','Tropical úmido','Floresta tropical montana','Vive em florestas tropicais de altitude e regiões de baixa altitude, com vegetação densa e abundância de matéria orgânica.',2),
+('Campos e áreas de pastagem','Temperado','Campos e pradarias','Habita áreas abertas com solo rico em matéria orgânica e presença de fezes de animais, utilizadas para alimentação e reprodução.', 3), ('Florestas tropicais africanas','Tropical úmido','Floresta equatorial','Vive em florestas africanas quentes e úmidas, com grande disponibilidade de matéria orgânica e vegetação abundante.',4),
+('Florestas tropicais','Tropical úmido','Floresta tropical','Habita florestas com vegetação densa, troncos em decomposição e solos ricos em nutrientes.',5),
+('Pradarias e áreas agrícolas','Temperado','Campos e pradarias','Vive em áreas abertas, jardins e campos, onde suas larvas podem se desenvolver no solo.', 6),
+('Florestas e jardins floridos','Temperado','Floresta temperada','Habita jardins, bosques e áreas com abundância de flores, alimentando-se principalmente de pólen e néctar.',7),
+('Florestas tropicais asiáticas','Tropical úmido','Floresta tropical','Vive em florestas tropicais com árvores de grande porte, vegetação densa e madeira em decomposição.',8),
+('Florestas tropicais de altitude','Tropical úmido','Floresta tropical montana','Habita florestas úmidas de altitude, geralmente associadas à vegetação abundante e árvores hospedeiras.',9),
+('Vinhedos e áreas arborizadas','Temperado','Floresta temperada e áreas agrícolas','Encontrado em vinhedos, jardins e regiões arborizadas, onde há vegetação e raízes disponíveis para alimentação.',10),
+('Florestas tropicais úmidas','Tropical úmido','Floresta tropical','Habita florestas úmidas, permanecendo sob cascas de árvores e em locais protegidos da luz solar.',11),
+('Campos secos e áreas abertas','Mediterrâneo','Campos e pradarias','Prefere terrenos secos, ensolarados e com solo exposto, onde encontra abrigo e presas para alimentação.',12),
+('Florestas temperadas','Temperado','Floresta temperada','Vive em florestas com árvores de folhas caducas, onde encontra lagartas e outros pequenos animais.',13),
+('Campos ensolarados','Temperado','Campos e pradarias','Habita áreas abertas, gramados e terrenos arenosos com bastante exposição solar e vegetação rasteira.',14),
+('Florestas temperadas úmidas','Temperado','Floresta temperada','Vive no solo de florestas, entre folhas caídas, troncos e matéria orgânica em decomposição.',15),
+('Florestas e áreas úmidas','Temperado','Floresta temperada','Habita regiões florestais com solo úmido, folhas acumuladas e pequenos organismos utilizados como alimento.',16),
+('Dunas e praias arenosas','Temperado','Ecossistema costeiro','Vive em dunas e terrenos arenosos costeiros, onde utiliza o solo exposto para abrigo e caça.',17),
+('Florestas temperadas de carvalhos','Temperado','Floresta temperada decídua','Habita florestas de árvores caducas, especialmente carvalhos, onde pode subir nos troncos e galhos para caçar lagartas.',18),
+('Campos agrícolas e pradarias','Temperado','Campos e pradarias','Encontrado em campos cultivados, plantações e áreas abertas, onde encontra sementes e pequenos invertebrados.',19),
+('Campos abertos e áreas de vegetação', 'Subtropical', 'Campos e pradarias', 'Habita terrenos abertos e ensolarados, frequentemente próximos de solos arenosos, onde caça outros pequenos invertebrados.', 20),
+('Deserto e regiões semiáridas do Cabo','Semiárido','Deserto e vegetação arbustiva','Habita regiões áridas da África do Sul, especialmente áreas de vegetação rasteira e solos secos, onde encontra fezes de animais.',21),
+('Deserto do Namibe','Árido desértico','Deserto costeiro','Vive em dunas e planícies arenosas do deserto do Namibe, ambiente caracterizado por baixa precipitação e neblinas costeiras.',22),
+('Deserto do Namibe e áreas arenosas','Árido desértico','Deserto costeiro','Habita terrenos arenosos e regiões desérticas, onde procura detritos orgânicos transportados pelo vento.', 23),
+('Regiões áridas da África Austral','Semiárido','Deserto e campos secos','Vive em terrenos secos e abertos, procurando esterco de animais para alimentação e reprodução.', 24),
+('Deserto da África Austral','Árido','Deserto arenoso','Habita áreas de areia solta e vegetação escassa, apresentando adaptações para caminhar e procurar alimento em terrenos desérticos.',25),
+('Montanhas áridas de Richtersveld','Árido montanhoso','Deserto montanhoso','Vive em regiões montanhosas secas da África do Sul, com grandes variações de temperatura e vegetação adaptada à escassez de água.',26),
+('Regiões áridas da Argentina','Semiárido','Estepes e campos secos','Habita ambientes abertos e secos, onde procura esterco e utiliza galerias subterrâneas para abrigo e armazenamento de alimento.',27)
+('Campos e pradarias argentinas','Temperado','Pampas','Vive em campos abertos com vegetação rasteira, solo relativamente exposto e presença de animais produtores de esterco.',28),
+('Regiões montanhosas da Argentina','Temperado de altitude','Campos montanos','Habita áreas elevadas e abertas, utilizando o solo para escavar galerias subterrâneas e armazenar recursos alimentares.',29),
+('Regiões áridas e semiáridas','Árido','Deserto e vegetação xerófila','Vive em ambientes secos e ensolarados, utilizando o solo e a vegetação rasteira como abrigo contra o calor e a dessecação.',30),
+('Florestas temperadas europeias','Temperado úmido','Floresta temperada decídua','Habita florestas com árvores caducas, troncos em decomposição e folhas acumuladas no solo, onde encontra caracóis e lesmas.',31),
+('Florestas temperadas europeias','Temperado','Floresta temperada','Vive em florestas e áreas arborizadas, permanecendo entre folhas, pedras e troncos caídos, onde caça pequenos invertebrados.',32),
+('Cavernas da Eslovênia','Subterrâneo úmido', 'Ecossistema cavernícola','Habita cavernas e sistemas subterrâneos da Eslovênia, caracterizados pela ausência de luz, umidade elevada e temperatura relativamente estável.', 33),
+('Savanas africanas','Tropical sazonal','Savana','Vive em regiões abertas da África, com vegetação rasteira, solo exposto e clima quente, onde caça outros pequenos invertebrados.',34),
+('Florestas e campos da Península Ibérica','Mediterrâneo', 'Bosques mediterrâneos','Habita terrenos secos, bosques e áreas abertas da Península Ibérica, onde encontra abrigo entre pedras, folhas e vegetação.',35),
+('Dunas e regiões costeiras mediterrâneas', 'Mediterrâneo','Ecossistema costeiro','Vive em solos arenosos e dunas costeiras, permanecendo escondido sob a areia e pedras durante as horas mais quentes.',36),
+('Florestas e jardins europeus','Temperado úmido','Floresta temperada','Habita florestas, jardins e áreas agrícolas com vegetação abundante, onde encontra lesmas, caracóis e outros pequenos animais.',37),
+('Savanas e desertos africanos','Árido e semiárido','Savana e deserto','Vive em regiões abertas e secas da África, com solo arenoso e vegetação esparsa, onde caça outros invertebrados.',38),
+('Savanas africanas','Tropical sazonal','Savana','Habita áreas abertas e quentes da África, com vegetação rasteira e arbustos, onde procura presas no solo.',39),
+('Campos e florestas europeias','Temperado','Floresta temperada e pradarias','Vive em campos, jardins e áreas florestais, preferindo solos com vegetação e matéria orgânica onde encontra pequenos invertebrados.',40),
+('Florestas tropicais do Sudeste Asiático',
+ 'Tropical úmido',
+ 'Floresta tropical',
+ 'Habita florestas tropicais com vegetação abundante, onde permanece sobre flores e plantas, utilizando a camuflagem para capturar pequenos insetos.',
+ 41),
+
+('Florestas temperadas da América do Norte',
+ 'Temperado',
+ 'Floresta temperada',
+ 'Vive em florestas e campos com plantas hospedeiras da família Apocynaceae, especialmente áreas onde crescem as plantas do gênero Asclepias.',
+ 42),
+
+('Florestas, campos e jardins',
+ 'Temperado e subtropical',
+ 'Floresta temperada e campos',
+ 'Habita diferentes ambientes com vegetação florida, jardins e áreas agrícolas, onde encontra néctar e pólen para alimentação.',
+ 43),
+
+('Florestas tropicais da América Central e do Sul',
+ 'Tropical úmido',
+ 'Floresta tropical',
+ 'Constrói ninhos subterrâneos em solos próximos de vegetação abundante, especialmente em clareiras, bordas de florestas e áreas agrícolas.',
+ 44),
+
+('Lagos, lagoas e áreas alagadas',
+ 'Temperado',
+ 'Ecossistema de água doce',
+ 'Habita regiões próximas de lagos, lagoas e rios com vegetação aquática, onde suas larvas se desenvolvem na água e os adultos caçam insetos voadores.',
+ 45),
+
+('Campos, jardins e áreas agrícolas',
+ 'Temperado',
+ 'Campos e pradarias','Habita jardins, plantações, campos e vegetação arbustiva, onde encontra pulgões e outros pequenos insetos para alimentação.',46),
+
+('Pradarias e áreas agrícolas','Temperado','Campos e pradarias','Vive em campos abertos, pastagens e plantações, onde encontra gramíneas utilizadas como alimento e locais adequados para reprodução.', 47),
+
+('Pradarias e florestas úmidas','Temperado úmido','Floresta temperada e campos','Habita áreas com solo úmido, vegetação rasteira e proximidade de córregos, onde suas larvas encontram pequenos organismos para alimentação.',48),
+
+('Florestas tropicais australianas','Tropical e subtropical','Floresta tropical','Vive em vegetação arbustiva e florestas australianas, onde permanece camuflado entre folhas secas, galhos e plantas.',49),
+
+('Bosques e florestas mediterrâneas','Mediterrâneo','Floresta mediterrânea','Habita bosques, pomares e áreas arborizadas, onde encontra árvores hospedeiras e utiliza sua vegetação para alimentação.',50),
+
+('Florestas temperadas da América do Norte','Temperado','Floresta temperada decídua','Habita florestas e áreas arborizadas, onde as larvas se desenvolvem em folhas acumuladas e matéria orgânica em decomposição.',51),
+
+('Jardins, campos e ambientes urbanos','Temperado','Ecossistema urbano e campos','Encontrada em jardins, plantações e áreas naturais, onde utiliza matéria orgânica em decomposição como fonte de alimento.',52),
+
+('Campos agrícolas e vegetação tropical','Tropical e subtropical','Florestas tropicais e campos agrícolas','Habita plantações, jardins e áreas com vegetação abundante, alimentando-se de diferentes partes das plantas cultivadas.',53),
+
+('Jardins e áreas úmidas','Temperado','Floresta temperada e campos','Vive em jardins, campos e locais com vegetação densa, onde encontra abrigo sob pedras, folhas e troncos caídos.',54),
+
+('Florestas, campos e jardins','Temperado','Floresta temperada e pradarias','Habita ambientes com vegetação abundante e presença de pequenos insetos, utilizando folhas e galhos como pontos de observação para capturar presas.', 55),
+
+('Florestas e jardins da América do Norte','Temperado','Floresta temperada','Habita florestas, jardins e áreas arborizadas, onde constrói ninhos em madeira morta ou estruturas de madeira não tratada.',56),
+
+('Casas, ninhos e ambientes urbanos','Temperado e subtropical','Ecossistema urbano','Vive em ambientes associados a animais domésticos, especialmente gatos, permanecendo em seus pelos e também em tapetes, camas e outros locais onde os animais descansam.', 57),
+
+('Esgotos, porões e construções urbanas','Tropical e subtropical','Ecossistema urbano','Habita locais quentes e úmidos, como redes de esgoto, porões, depósitos e cozinhas, onde encontra restos de alimentos e matéria orgânica.',58),
+
+('Solos e estruturas de madeira','Subtropical e tropical','Floresta tropical e ambientes urbanos', 'Constrói colônias subterrâneas e galerias em madeira, alimentando-se de celulose encontrada em árvores, construções e materiais vegetais.',59),
+
+('Florestas temperadas e subtropicais asiáticas','Temperado e subtropical','Floresta temperada e subtropical','Habita florestas e regiões arborizadas do leste asiático, onde constrói ninhos no solo e procura outros insetos para alimentação.',60);
 
     TRUNCATE Table insetos;
     SELECT * FROM insetos 
