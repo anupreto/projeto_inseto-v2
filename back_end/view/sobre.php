@@ -39,7 +39,7 @@
                 <h3>Navegação Rápida</h3>
                 <ul>
                     <li><a href="index.php">&larr; Voltar para a Página Inicial</a></li>
-                    <li><a href="categorias.php">Explorar Categorias</a></li>
+                    <li><a href="categoria.php">Explorar Categorias</a></li>
                 </ul>
             </div>
         </aside>

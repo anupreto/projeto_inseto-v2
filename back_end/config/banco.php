@@ -1,4 +1,6 @@
 <?php
+date_default_timezone_set('America/Sao_Paulo');
+
 $host = "127.0.0.1";
 $user = "root";
 $password = "";
@@ -12,4 +14,3 @@ try {
     echo json_encode(["erro" => "Erro de conexão: " . $e->getMessage()]);
     exit();
 }
-?>
