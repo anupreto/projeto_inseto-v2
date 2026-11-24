@@ -1,27 +1,48 @@
+
 (() => {
     "use strict";
 
     const STORAGE_KEY = "wiki-invertebrados-theme";
+
+
     const root = document.documentElement;
+
 
     let theme = "dark";
 
+
+
+    // Tema salvo
+
+
     try {
+
+
         const savedTheme = localStorage.getItem(STORAGE_KEY);
+
 
         if (savedTheme === "light" || savedTheme === "dark") {
             theme = savedTheme;
         }
+
     } catch (error) {
-        // Continua funcionando sem localStorage.
+
     }
 
     root.dataset.theme = theme;
     root.style.colorScheme = theme;
 
+
+
+    // Estilos do CSS
+
+
     const style = document.createElement("style");
 
     style.textContent = `
+
+        // Transição entre os temas
+
         body,
         .wiki-header,
         .artigo-bloco,
@@ -32,13 +53,15 @@
         .bloco-curiosidade,
         .btn-voltar,
         main {
+
             transition:
                 background-color .2s ease,
                 color .2s ease,
                 border-color .2s ease;
         }
 
-        /* TEMA CLARO */
+
+        // tema claro
 
         :root[data-theme="light"] body {
             background: #f6f8fa !important;
@@ -50,6 +73,7 @@
         :root[data-theme="light"] .sidebar-box,
         :root[data-theme="light"] .card-confortavel,
         :root[data-theme="light"] main {
+
             background: #ffffff !important;
             color: #24292f !important;
             border-color: #d0d7de !important;
@@ -59,6 +83,7 @@
         :root[data-theme="light"] .foto-inseto,
         :root[data-theme="light"] .bloco-curiosidade,
         :root[data-theme="light"] .btn-voltar {
+
             background: #f6f8fa !important;
             color: #24292f !important;
             border-color: #d0d7de !important;
@@ -72,6 +97,7 @@
         :root[data-theme="light"] .artigo-bloco p,
         :root[data-theme="light"] .dado-item,
         :root[data-theme="light"] .bloco-curiosidade p {
+
             color: #57606a !important;
         }
 
@@ -80,6 +106,7 @@
         :root[data-theme="light"] .artigo-bloco h2,
         :root[data-theme="light"] .bloco-curiosidade h3,
         :root[data-theme="light"] .card-titulo h1 {
+
             color: #0969da !important;
         }
 
@@ -88,6 +115,7 @@
         :root[data-theme="light"] h4,
         :root[data-theme="light"] strong,
         :root[data-theme="light"] .dado-item strong {
+
             color: #24292f !important;
         }
 
@@ -103,14 +131,17 @@
         :root[data-theme="light"] input,
         :root[data-theme="light"] select,
         :root[data-theme="light"] textarea {
+
             background: #ffffff !important;
             color: #24292f !important;
             border-color: #d0d7de !important;
         }
 
-        /* BOTÃO DE TEMA */
+
+        // Estilo do botão
 
         #theme-toggle {
+
             position: fixed;
             right: 20px;
             bottom: 20px;
@@ -160,28 +191,45 @@
         }
     `;
 
+    // Adiciona os estilos CSS ao documento.
     document.head.appendChild(style);
 
+    // CRIAÇÃO DO BOTÃO PELO JAVASCRIPT
+    // ==========================================
     const button = document.createElement("button");
+
     button.id = "theme-toggle";
     button.type = "button";
 
+    // Elemento responsável pelo ícone.
     const icon = document.createElement("span");
     icon.setAttribute("aria-hidden", "true");
 
+    // Elemento responsável pelo texto.
     const label = document.createElement("span");
 
+    // Insere o ícone e o texto dentro do botão.
     button.append(icon, label);
+    // ==========================================
+
+    // 3
+    // applyTheme()
+
 
     function applyTheme(nextTheme, savePreference = true) {
+
         const isLight = nextTheme === "light";
 
         root.dataset.theme = nextTheme;
+
         root.style.colorScheme = nextTheme;
 
         icon.textContent = isLight ? "🌙" : "☀️";
-        label.textContent = isLight ? "Tema escuro" : "Tema claro";
 
+        label.textContent = isLight
+            ? "Tema escuro"
+            : "Tema claro";
+        
         button.setAttribute("aria-pressed", String(isLight));
 
         button.setAttribute(
@@ -192,38 +240,77 @@
         );
 
         if (savePreference) {
+
             try {
                 localStorage.setItem(STORAGE_KEY, nextTheme);
+
             } catch (error) {
-                // A troca funciona mesmo sem armazenamento.
+                
             }
         }
     }
 
-    button.addEventListener("click", () => {
-        const nextTheme =
-            root.dataset.theme === "light" ? "dark" : "light";
 
+
+    // 4
+    // addEventListener()
+
+
+    // O addEvent faz a troca dos temas com o click e passa para o applytheme para fazer sua aplicação visual
+
+    button.addEventListener("click", () => {
+
+        // troca os temas se estiver em um vai o outro
+        const nextTheme =
+            root.dataset.theme === "light"
+                ? "dark"
+                : "light";
+
+        // Aplica o tema selecionado aqui
         applyTheme(nextTheme);
+
     });
 
+
+
+    // Onde inicia meu sistema
+
+
     function initialize() {
+
         if (!document.body.contains(button)) {
+            
             document.body.appendChild(button);
+            
         }
 
         applyTheme(theme, false);
+        
     }
 
+
+
+
+
+
+    
+
+    // Carrega todo o HTML do nosso site
+
+
     if (document.readyState === "loading") {
+
+       
         document.addEventListener(
             "DOMContentLoaded",
             initialize,
             { once: true }
         );
-    } else {
-        initialize();
-    }
-})();
 
-//criar a tela de login usando js e ts
+    } else {
+        
+        initialize();
+        
+    }
+
+})();
